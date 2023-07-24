@@ -307,7 +307,7 @@ app.put("/todos/:todoId/", async (request, response) => {
     category = previousTodo.category,
     dueDate = previousTodo.dueDate,
   } = request.body;
-  let = updateTodo;
+  let updateTodo;
   switch (true) {
     //updating status
     case requestBody.status !== undefined:
@@ -404,7 +404,7 @@ app.put("/todos/:todoId/", async (request, response) => {
 
 //API 6
 
-app.delete("/todos/:todId/", async (response, request) => {
+app.delete("/todos/:todoId/", async (request, response) => {
   const { todoId } = request.params;
   const deleteQuery = `
     DELETE
