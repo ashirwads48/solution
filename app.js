@@ -264,12 +264,12 @@ app.post("/todos/", async (request, response) => {
         category === "LEARNING"
       ) {
         if (isMatch(dueDate, "yyyy-MM-dd")) {
-          const newDate = format(new Date(dueDate), "yyyy-MM-dd");
+          const newDueDate = format(new Date(dueDate), "yyyy-MM-dd");
           const postQuery = `
                     INSERT INTO
                         todo(id,todo,priority,status,category,due_date)
                     VALUES
-                        (${id},'${todo}','${priority}','${status}','${category}','${newDate}');`;
+                        (${id},'${todo}','${priority}','${status}','${category}','${newDueDate}');`;
           await db.run(postQuery);
           response.send("Todo Successfully Added");
         } else {
